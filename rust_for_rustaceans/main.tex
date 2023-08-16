@@ -1,0 +1,73 @@
+%=============================================================================
+%	Rust for Rustaceans - Notes
+%=============================================================================
+
+%=============================================================================
+%	Packages
+%=============================================================================
+
+\documentclass[11pt, a4paper]{article}		% document format
+\usepackage{graphicx}						% package to insert graphics
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}					% this enables all unicode characters
+\usepackage{amsmath, amsfonts, amssymb} 	% maths packages
+\usepackage{amsthm}							% theorem styles
+\usepackage{fancyhdr}						% package for headers, foot and matgin notes
+\usepackage{enumitem}						% allows to change the enumeration format in line
+
+
+%=============================================================================
+%	Commands
+%=============================================================================
+
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathcal{E}}
+
+
+%=============================================================================
+%	Environment
+%=============================================================================
+
+\theoremstyle{plain}
+\newtheorem{algorithm*}{Algorithm}
+
+\theoremstyle{definition}
+
+\newtheorem{theorem}{Theorem}
+
+
+%============================================================================
+%	Pagestyle
+%=============================================================================
+
+\pagestyle{fancy}		% As we use the fancyhdr pkg need the fancy pagestyle, for more information:
+						% http://tug.ctan.org/tex-archive/macros/latex/contrib/fancyhdr/fancyhdr.pdf
+
+
+%\topmargin 0 pt
+%\oddsidemargin 0 pt
+%\evensidemargin 0 pt
+%\marginparwidth 0 pt
+
+
+%\textheight 25cm
+%\textwidth 400 pt
+%\advance\textheight by \topskip
+
+%\parindent 0pt
+%\parskip 5mm plus 1mm minus 1mm
+
+%\fancyhead[C]{\textbf{whatever}}					    % Central header
+\fancyhead[L]{Rust for Rustaceans}			            % Left header
+\fancyhead[R]{Marc Jovani Bertran}						% Right header
+
+
+
+%=============================================================================
+%	Document
+%=============================================================================
+
+\begin{document}
+\input{1_fundations.tex}
+\end{document}

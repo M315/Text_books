@@ -1,0 +1,56 @@
+\section{Project Structure}
+
+\subsection{Features}
+
+Features are flags that Cargo uses to add optional functionality to your project and its dependencies.
+
+In a project some part of the code can be left as optional behind a feature in order to make the compilation and de dependencies easier for the user.
+This can be done by:
+
+\begin{lstlisting}[language=Rust, style=boxed]
+    #[cfg(feature = "some-feature")]
+\end{lstlisting}
+
+\subsection{Work-spaces}
+
+The project can be split in different parts in a workspace to reduce the compile times and the usability,
+so one change is made only the modified part of the project will be compiled.
+To do it add this to the \textit{Cargo.toml} file:
+
+\begin{lstlisting}[language=Rust, style=boxed]
+    [workspace]
+    members = [
+    	"foo",
+    	"bar/one",
+    	"bar/two",
+    ]   
+\end{lstlisting}
+
+
+\subsection{Project Configuration}
+
+On the \textit{Cargo.toml} file we can add some metadata about the author, path to the project or to the documentation, etc.
+
+Also the build configuration can be specified from here so the compiler knows what to do for every kind of build that encounters.
+We can specify the optimization level, the debug options or how the program should \textbf{panic}.
+We can even set different optimization options to the different dependencies.
+
+\subsection{Conditional Compilation}
+
+We can specify which parts of the project will be compiled depending on some options like, features, operating systems, context (debug, test…) or cpu architecture.
+This conditioning can also be applied to dependencies.
+
+\subsection{Versioning}
+
+There are three levels of versioning,
+
+\begin{enumerate}
+    \item Breaking changes, that require a major version change
+    \item Additions, that require a minor version change
+    \item Bug fix, that require a patch version change
+\end{enumerate}
+
+On top of that if the project is public we should respect the \textbf{MSRV} which stands for \textit{Minimum Supported Rust Version},
+for our project and should be supported for at least 6  to 12 month.
+
+To not make the version number too large we can name with a suffix like \textit{-alpha.1} the unreleased versions.

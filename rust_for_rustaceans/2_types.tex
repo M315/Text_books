@@ -1,0 +1,37 @@
+\section{Types}
+
+\subsection{Alignment}
+
+Variables are stored in memory depending on their size, but they occupy at least the same space as the bytes on the CPU architecture in order to go faster on calculations.
+
+Also a generic type is aligned with the biggest of its variables type size.
+Rust allows to use the C style memory for generic types, which preserves the order of the variables, but you can let the compiler do some optimizations on memory.
+
+Rust allows also to not align with the architecture at cost of performance if memory is so critical.
+
+\subsubsection{Dynamically Sized Types}
+
+DTS's are also known as fat / wide pointers and they store the pointer to the memory on the heap and the size of the object.
+
+\subsection{Traits}
+
+A trait is a generic method for a given type. Can implement a default behaviour for type's that don't implement it.
+
+\subsubsection{Trait Bounds}
+
+And can be used as a type constraint for functions, so only types implementing the trait can be called as variables to the function.
+
+\subsubsection{Marker Traits}
+
+Marker traits are traits have not methods or are associated with types, they only indicate if a give type can or cannot be used in a certain way.
+
+\subsubsection{Trait implementation}
+
+At compile time Rust constructs the code for each trait implemented and for each type that is used for those traits,
+so on the compiled code only appears the code that is needed on run time.
+
+The process of going from a generic type for a given trait to many non-generic types is called \textit{monophormization},
+and makes Rust optimize for each type the trait is implemented, but makes the compiler slower.
+
+To avoid the monophormization behaviour one can make a trait dynamic by replacing the key work \textit{impl} with \textit{\&dyn},
+so the user must provide a pointer to the type or trait to be used.

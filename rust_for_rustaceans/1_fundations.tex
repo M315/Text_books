@@ -17,7 +17,7 @@ The \textbf{heap} contains memory that is not related with any function or any t
 To use the heap the most common structure to use is the \textbf{Box<T>}.
 
 The static memory contains the binary code for the program and the static values that are set at compile time and last all the life time of the program.
-The life time \textit{static} indicates that a variable lives until the program end but doesn’t need to be initialized at the start of the program.
+The life time \textit{static} indicates that a variable lives until the program end but doesn't need to be initialized at the start of the program.
 
 \subsection{Ownership}
 
@@ -25,7 +25,7 @@ A \textit{value} is owned by a \textit{variable} that stores it on a memory regi
 when the value is assigned to an other variable or moved to an other region of memory (push to a vector, box it…)
 then the ownership is moved and the original variable no longer owns the value so it can no longer access it.
 
-Some types are special and don’t drop from the original variable instead are copied to the new one,
+Some types are special and don't drop from the original variable instead are copied to the new one,
 so an exact copy is created on the corresponding memory region.
 This types have the \textbf{Copy} trait, primitive types like \textit{i32}, \textit{char}$\dots$, have this trait.
 

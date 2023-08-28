@@ -1,0 +1,25 @@
+\section{Error Handling}
+
+Functions that can error in rust must return a \textit{Result<T, E>}, where the \textit{E} represents de error that is returned.
+Errors can be handled in tow main ways
+
+\subsection{Enumerate Errors}
+
+If the error can have different type and response depending on where it is generated,
+it's useful to return an \textit{enum} indicating the kind of error so the called can identify it and decide how to handle it.
+
+In this case the types on the enumeration can can have different traits depending on their characteristics,
+but \textbf{all} must implement the \textit{std::error::Error} trait,
+and as long as possible the \textit{Display} and \textit{Debug} traits, and if possible the \textit{Sync} and \textit{Send} traits are also important.
+
+\subsection{Opaque Errors}
+
+If the errors on the other hand just provide information that will be useful to the user but not to the program in order to perform different things,
+we should use the a single opaque type error that contains the traits \textit{Error, Send, Debug} and \textit{Display}.
+
+\subsection{Propagating Errors}
+
+When a function can throw an error and the caller function don't have to take care of it we can just propagate it back.
+
+Rust's \textit{?} operator acts as a shorthand for \textit{unwrap or return early}.
+It helps working easily with errors so they can be propagated back without to verbose.

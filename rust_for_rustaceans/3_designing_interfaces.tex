@@ -1,0 +1,46 @@
+\section{Designing interfaces}
+
+Any project has an API. So there are some good practices that a project should follow so it can scale better and it can be used by anyone as easily as possible.
+
+\subsection{Unsurprising}
+
+The Principle of Least Surprise. Where possible your interfaces should be intuitive so when a user has to guess, guesses right.
+
+\subsubsection{Naming}
+
+The namig should be intuitive and if any name is used in more than one place it should align with each other so the user can infer what the function, type, trait… produces.
+
+\subsubsection{Traits}
+
+The types that the interface contains should implement a list of traits if possible so the users don't get confused by not having them:
+
+\begin{enumerate}
+    \item Debug
+    \item Send \& Sync
+    \item Clone \& Default
+    \item PartialEq, PartialOrd, Hash, Eq, Ord
+\end{enumerate}
+
+Some might not apply but if they do, should be there. Also the interface should handle \textit{From} and \textit{Into} so the types can be \textbf{wrap} and \textbf{unwrap}.
+
+\subsection{Flexibility}
+
+"Each piece of code can be thought as a contract,
+with a set of restrictions and promises,
+where some inputs with some properties are expected and an output with some properties is returned."
+
+A good rule of thump is not be too restrictive and only do promises you can keep.
+Adding restrictions or removing promises usually breaks backward compatibility,
+on the other hand, relaxing the restrictions or adding more promises tends to be more save.
+
+Rust restrictions and promises are usually on the signature of a function,
+where it is specified which type or trait should the input have and which characteristics the return will present.
+
+\subsection{Borrowed vs. Owned}
+
+Functions should take references unless they need the object in memory for some reason,
+this helps keeping the memory more clean and do not perform unnecessary copies of memory.
+
+\subsection{Destructors}
+
+It should be clear who takes care of cleaning and object like a I/O stream before dropping it so the memory it occupies frees.

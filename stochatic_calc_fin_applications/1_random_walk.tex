@@ -1,0 +1,29 @@
+\section{Random Walk}
+
+We investigate the gamblers ruin problem on a random walk via the first step analysis,
+we define the probability of getting to given state conditioned by the current position,
+this is a function depending on the current position
+
+\begin{equation*}
+    f(k) = p \cdot f(k + 1) + q \cdot f(k - 1).
+\end{equation*}
+
+Then using the increment operator $\Delta f(k) = f(k + 1) - f(k)$ we can rewrite the equation as
+
+\begin{equation*}
+    \Delta f(k) = (q / p) \Delta f(k - 1).
+\end{equation*}
+
+Then by iterating it and using the boundaries $f(A) = 1$ and $f(-B) = -1$ then we get to
+
+\begin{equation*}
+    P(S_t \text{ hits A before -B} | S_0 = 0) = \frac{(q / p)^B - 1}{(q / p)^{A + B} - 1}
+\end{equation*}
+
+This same strategy can be appied to compute the expected time to hit the boundaries.
+
+We also use the probability generating function and the first step analysis to find the expected time of the game on gamblers ruin.
+
+\begin{equation*}
+    \phi(z) = E[z^X] = \sum_{x=0}^{\infty} p(x) z^x
+\end{equation*}

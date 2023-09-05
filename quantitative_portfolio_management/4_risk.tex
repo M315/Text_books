@@ -1,0 +1,24 @@
+\section{Risk}
+
+\subsection{Metrics}
+
+Two of the main metrics to quantify the portfolio risk are \textit{Value at Risk} \textbf{(VaR)}
+and \textit{Expected Shortfall}, or \textit{Conditional Value at Risk} \textbf{(CVar)}.
+Both are defined as functions depending on a parameter $p$ representing a probability.
+
+Let $Q$ be the daily portfolio pnl and $F(Q)$ the its pdf, then
+
+\begin{equation}
+	p = \int_{-\inf}^{VaR(p)} F(Q) dQ,
+\end{equation}
+
+\begin{equation}
+	CVaR(p) = \frac{1}{p} \int_{-\inf}^{VaR(p)} Q F(Q) dQ,
+\end{equation}
+
+this gives us $CVaR(p) < VaR(p) < 0$.
+
+One important feature is that CVaR is convex in the sence that given two portfolios $X$ and $Y$,
+then $CVaR(X + Y) \leq CVaR(X) + CVaR(Y)$, wheras VaR is not.
+
+Computing the VaR and the CVaR requieres a hard to measure distribution of portfolio returns.

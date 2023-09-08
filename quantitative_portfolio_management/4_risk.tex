@@ -22,3 +22,22 @@ One important feature is that CVaR is convex in the sence that given two portfol
 then $CVaR(X + Y) \leq CVaR(X) + CVaR(Y)$, wheras VaR is not.
 
 Computing the VaR and the CVaR requieres a hard to measure distribution of portfolio returns.
+
+\subsection{Factor models}
+
+Let $R_s$ be a random daily return, then the portfolio $P_s$ have a pnl $Q = \mathbf{P} \cdot \mathbf{R}$.
+The expectation and the variance of the portfolio pnl are:
+
+\begin{aligned}
+	E(Q) & = \sum_s f_s P_s, \\
+	Var(Q) & = \sum_{s, s'} P_s P_{s'} Cov(R_s, R_{s'}),
+\end{aligned}
+
+where $f_s$ is the forcast of the expected return $E(R_s)$.
+
+The main issue of calculating the risk using the volatility,
+is that the covariance $C_{s s'} = Cov(R_s, R_{s'})$ is quite complicated to measure historically and even harder to forecast.
+
+The best way to use the covarianvce matrix is by cleaned of noise and/or simplified by shrinkage.
+
+To shring the matrix we  can 

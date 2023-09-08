@@ -1,1 +1,16 @@
 \section{Market Data}
+
+Financial data can be presented by ticks, that are all the movements of a given market,
+or by agregated metrics like, open price, close price, volume, minute bars, \dots
+
+The data must be complete and when doing backtesting or simulations we must keep the values that had been droped from the marked.
+
+We need also to adjust the data to changes of an asset like dividents and splits.
+Those can be traked backward or forward.
+The downside of doing it backwards is that each day all the past adjustments must be recomputed.
+
+The returns are usually presented in linear way (accounting way) or logarithmic way.
+The upside of the logarithmic way is that the returns are additive serially, while with the linear way they are not.
+The logarithmic returns are a bit off from the linear returns,
+this is important when we compute expectations on returns, so we must adjust them using the volatility.
+

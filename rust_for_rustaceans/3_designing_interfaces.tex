@@ -44,3 +44,21 @@ this helps keeping the memory more clean and do not perform unnecessary copies o
 \subsection{Destructors}
 
 It should be clear who takes care of cleaning and object like a I/O stream before dropping it so the memory it occupies frees.
+
+\subsection{Documentation}
+
+The best thing for a project that is big enough or is shared by multiple users is to have a good documentation.
+
+Documentation should explain the obvious things that are in the interface like types, traits, functions…
+but more important it should contain all the unexpected behavior like errors…
+
+Also it should contain no obvious examples of the interface,
+so the users can start their projects with an example and modifying things until they get the result they were looking for.
+
+\subsubsection{Type guidance}
+
+A useful thing to do is to create dummy types to use in the function as a boolean instead of a \textit{true} or \textit{false},
+so the signatures and the usage of the function is more intuitive.
+
+For example if an input can be a string so the function does something different depending on the string,
+would be interesting to have an enum with types so its more natural the options that are available.

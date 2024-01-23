@@ -1,0 +1,36 @@
+\section{Testing}
+
+In Rust the majority of testing is done using the attribute \#[test] and the \textit{tests/} directory.
+
+\subsection{Rust Testing mechanism}
+
+To execute the test of the project use the command \textit{cargo test} this enables all the code flagged with \textit{cfg(test)}.
+Then generates the \textbf{test harness}.
+
+\subsubsection{Test Harness}
+
+The test harness is created by the compiler and consists of a main function that invokes all the \#[test] functions of the code.
+
+One can opt out from the harness to create the tests.
+
+The integration test (i.e. the tests on the directory textit{tests/}) are build on a separate crate so they can only access the public interface of the code.
+
+The \#[cfg(test)] allows to build code only to run the tests, also can be combined with other Traits.
+
+\subsubsection{Doctests}
+
+Rust code snippets in documentation comments are automatically run as test cases.
+
+Because doctests appear in the documentation and are public to the users, can not use private methods.
+
+The compiler automatically creates a unique dedicated create for each doctest and adds a main function to run them, this can be disabled.
+
+\subsection{Additional Testing Tools}
+
+For linting the code rust has a crate called \textit{clippy}.
+
+To generate test automatically \textit{fuzzy} comes handy, as it generates semi-random inputs based on some specifics.
+
+A super useful tool is \textit{Miri}, which is a Rust tool to inspect the code line by line instead of using a binary approach.
+
+Rust also provides some tools to test performance of the code and create benchmarks.

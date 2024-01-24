@@ -1,0 +1,21 @@
+\section{Martingales: The Next Steps}
+
+Define the \textbf{conditional expectation} for random variables and derive its basic properties like linearity, tower property, \dots
+
+Define \textbf{uniform integrability} and use it to appreciate that the conditional expectation is a contraction.
+And let us construct a link between convergence in probability an convergence in mean ($L^1$).
+
+We now can define a \textbf{continuous time martingale} by a process $\{X_t\}_{t \in \mathbb{R}}$ adapted to a \textit{filtration} $\{\mathcal{F}_t\}_{t \in \mathbb{R}}$
+
+\begin{equation}
+    E(|X_t|) < \infty, \; \forall t \in [0, \infty),
+\end{equation}
+
+\begin{equation}
+    E(X_t | \mathcal{F}_s) = X_s, \; \forall 0 \leq s < t < \infty.
+\end{equation}
+
+We prove the \textbf{Doop's theorems} and the \textbf{martingale convergence theorems} for continuous martingales.
+
+We prove the ruin theorems for the Brownian Motion using its representation as a martingale.
+The results are the same as for the random walk, recall that we prove those using random walk properties and discrete martingales by separate.

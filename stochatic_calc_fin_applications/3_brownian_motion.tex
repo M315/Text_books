@@ -1,0 +1,23 @@
+\section{Brownian Motion}
+
+A stochastic process ${B_t}$ is a Brownian motion if
+
+\begin{enumerate}
+    \item $B_0 = 0$,
+    \item It has independent increments,
+    \item For any $0 \leq s \leq t \leq T$ the increment $B_t - B_s$ has a Gaussian distribution with mean 0 and variance $t - s$,
+    \item It's continuous almost everywhere.
+\end{enumerate}
+
+The definition already gives us a lot of information about the process,
+as the increments being Gaussian and independent imply that the distributions of the increments are Gaussian random variables with a diagonalizable covariance matrix.
+
+An other important feature is that it's a Gaussian process,
+as the Gaussian characteristic function is determined by only it's first two moments it's quite useful for many problems.
+
+The Covariance of two instances $B_s$ and $B_t$ of a Brownian motion is $Cov(B_s, B_t) = \min(s, t)$.
+
+Finally we construct the Brownian motion by approximating it with wavelet series on $\mathbb{L}^2$,
+first by approximating a standard Gaussian process and the by integrating the series, as the Brownian motion is the integral of such process.
+
+This construction is useful to simulate computationally the path of the Brownian motion.

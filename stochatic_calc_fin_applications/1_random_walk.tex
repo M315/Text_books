@@ -17,10 +17,15 @@ Then using the increment operator $\Delta f(k) = f(k + 1) - f(k)$ we can rewrite
 Then by iterating it and using the boundaries $f(A) = 1$ and $f(-B) = -1$ then we get to
 
 \begin{equation*}
-    P(S_t \text{ hits A before -B} | S_0 = 0) = \frac{(q / p)^B - 1}{(q / p)^{A + B} - 1}
+    P(S_t \text{ hits A before -B} | S_0 = 0) = \frac{(q / p)^B - 1}{(q / p)^{A + B} - 1}.
 \end{equation*}
 
-This same strategy can be appied to compute the expected time to hit the boundaries.
+This same strategy can be applied to compute the expected time to hit the boundaries.
+Considering that $g(k)$ is the expected time to hit the boundaries given we are at $k$.
+Then
+\begin{equation*}
+    g(k) = p g(k + 1) + q g(k - 1) + 1.
+\end{equation*}
 
 We also use the probability generating function and the first step analysis to find the expected time of the game on gamblers ruin.
 

@@ -1,0 +1,16 @@
+\section{First Martingale Steps}
+
+A sequence of random variables ${M_n}$ is a martingale with respect to ${X_n}$ an other sequence of random variables,
+if exists $f_n: \mathbb{R}^n \rightarrow \mathbb{R}$ such that $M_n = f_n(X_1, \dots, X_n)$, and
+\begin{equation*}
+    \mathbb{E}[M_n | X_1, \dots, X_{n - 1}] = M_{n - 1}.
+\end{equation*}
+
+We define stopping times and with them we see the Doob inequalities and the martingales convergence theorems.
+
+One key aspect of the martingales is that one can transform them using an predictable process, a non-anticipating process,
+to generate new martingales, this can be helpful to prove equality,
+inequality or bounds for non trivial martingales that we encounter like,
+combination of martingales or by adding stopping times to our martingales, so we can use the known theorems on these new martingales.
+
+See Probability Theory by Achim Klenke for a deeper and more rigorous treatment of the subject.

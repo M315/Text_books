@@ -1,0 +1,27 @@
+\section{Macros}
+
+Macros are a tool to make the compiler write code for us.
+
+\subsection{Declarative Macros}
+
+Declarative Macros are defined using \textit{macro\_rules!} and can be used by calling \textit{macro\_name!}.
+They are useful to generate code that have the same structure and is written multiple times like tests or implementations.
+
+The syntax is similar to a match statement, where for each matcher we have to indicate how to transcribe it into code.
+The syntax of the matcher is a bit tricky but essentially consists of identifiers and expressions encapsulated by \textit{\$()}.
+
+\subsection{Procedural Macros}
+
+Procedural Macros generate code from some given inputs, there are 3 types:
+\begin{itemize}
+    \item Function-like macros, using \textit{macro\_rules!},
+    \item Attribute macros, like \textit{\#[test]},
+    \item Derive macros, like \textit{\#[derive(Debug)]}.
+\end{itemize}
+
+The \textbf{Derive} macros are used only to automate implementation of traits when the automation is possible.
+
+The \textbf{Function-like} macros are essentially the same as declarative macros except that the compiler doesn't check for correctness.
+So we can use them in the rare case that the matching expressions get too complicated and want to work around them.
+
+The \textbf{Attribute} macros are mainly used in test generation, framework annotations like \textit{\#[tokio::main]} and other complicated parts of the code.
